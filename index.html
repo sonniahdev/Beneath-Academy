@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Beneath the Impact</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#006464",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#122017",
+                    },
+                    fontFamily: {
+                        display: ["Work Sans"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-on-primary {
+            color: #122017;
+        }
+        .icon-light { color: #122017; }
+        .dark .icon-dark { color: #f6f8f7; }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.hidden {
+            transform: translateX(100%);
+        }
+        .section-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-primary/20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center gap-3">
+                        <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Beneath the Impact</h1>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#home" onclick="showSection('home')">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#stories" onclick="showSection('stories')">Stories</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#podcast" onclick="showSection('podcast')">Podcast</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#academy" onclick="showSection('academy')">Academy</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#community" onclick="showSection('community')">Community</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#about" onclick="showSection('about')">About</a>
+                    </nav>
+                    <div class="hidden md:flex items-center gap-2">
+                        <button class="px-4 py-2 text-sm font-bold bg-primary/20 dark:bg-primary/30 text-gray-900 dark:text-white rounded-full hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">Sign In</button>
+                        <button class="px-4 py-2 text-sm font-bold bg-primary text-background-dark rounded-full hover:bg-primary/90 transition-colors">Join</button>
+                    </div>
+                    <button class="md:hidden text-gray-900 dark:text-white" id="mobile-menu-toggle">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-20 right-0 w-3/4 h-full bg-background-light dark:bg-background-dark border-l border-primary/20 p-6">
+                    <nav class="flex flex-col gap-4">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#home" onclick="showSection('home')">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#stories" onclick="showSection('stories')">Stories</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#podcast" onclick="showSection('podcast')">Podcast</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#academy" onclick="showSection('academy')">Academy</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#community" onclick="showSection('community')">Community</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#about" onclick="showSection('about')">About</a>
+                        <button class="px-4 py-2 text-sm font-bold bg-primary/20 text-gray-900 dark:text-white rounded-full hover:bg-primary/30 transition-colors text-left">Sign In</button>
+                        <button class="px-4 py-2 text-sm font-bold bg-primary text-background-dark rounded-full hover:bg-primary/90 transition-colors text-left">Join</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <!-- Home Section -->
+            <section id="home" class="relative flex h-[75vh] min-h-[500px] items-center justify-center text-center text-white">
+                <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEG54VSy-C-tMy7V4Iitrxb_ISwJhZY3UJ_7RQhdTcUsQh-lC9mLM74bvcR1nbO0XZb6pu_cI20ndnKLz0AAWQso0XR1fI2SpuM07m38IcoE5kiyiCUeZ0b3nuhAlTaVnl5Amhpja98yNU1HE9xnrwfgi0xHQDskedzeTVEoKj7QJ0sPWefHY-jXtl5tRuJ79u7x8KlAry4TdYyO6v0f06zN02poQEzif7deXFM7nLiryDbSHrLjqqVP0HNrHcNS7f9KHeTiSoNVw");'></div>
+                <div class="absolute inset-0 bg-background-dark/60"></div>
+                <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-black tracking-tighter sm:text-5xl lg:text-7xl">Stories That Spark Change</h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">
+                        Uncover real stories and strategies from changemakers who are making a difference in the world. Learn how they're tackling challenges and driving positive change.
+                    </p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4">
+                        <a class="rounded-full bg-primary px-8 py-3.5 text-base font-bold text-on-primary shadow-lg transition-transform hover:scale-105" href="#podcast" onclick="showSection('podcast')">Listen to the Podcast</a>
+                        <a class="rounded-full bg-white/10 dark:bg-white/20 backdrop-blur-sm px-8 py-3.5 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-white/20 dark:hover:bg-white/30" href="#academy" onclick="showSection('academy')">Join the Academy</a>
+                    </div>
+                </div>
+            </section>
+            <section id="what-we-offer" class="py-16 sm:py-24 lg:py-32">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">What We Offer</h2>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                            Explore our platform designed to empower changemakers with the knowledge and inspiration they need to succeed.
+                        </p>
+                    </div>
+                    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-background-light p-6 shadow-sm transition-all hover:shadow-lg dark:bg-background-dark dark:border-primary/30">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                                <svg class="text-primary" fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Growth</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Track your progress and see the impact of your work with our intuitive tools.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-background-light p-6 shadow-sm transition-all hover:shadow-lg dark:bg-background-dark dark:border-primary/30">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                                <svg class="text-primary" fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Discovery</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Dive deep into the stories of successful changemakers and learn from their experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-background-light p-6 shadow-sm transition-all hover:shadow-lg dark:bg-background-dark dark:border-primary/30">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                                <svg class="text-primary" fill="currentColor" height="28" viewBox="0 0 256 256" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Inspiration</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Find the motivation you need to keep going with our curated collection of inspiring stories.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-16">
+                            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-stone-900 dark:text-stone-100 mb-4">About Us</h1>
+                            <p class="text-lg text-stone-600 dark:text-stone-300">Unveiling the stories that shape our world.</p>
+                        </div>
+                        <div class="space-y-20">
+                           
+                                <div class="grid md:grid-cols-2 gap-12 items-center">
+                                    <div>
+                                        <h2 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-4">Who We Are</h2>
+                                        <p class="text-stone-700 dark:text-stone-300 leading-relaxed">
+                                            Beneath the Impact is a storytelling and learning platform dedicated to empowering changemakers. We believe in the power of narratives to drive meaningful change and foster a deeper understanding of the world around us. Our platform serves as a hub for sharing impactful stories, facilitating learning experiences, and connecting individuals committed to making a difference.
+                                        </p>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden shadow-lg">
+                                        <img alt="Behind the scenes of an interview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA6yJfGNNZj8LioSkhuigWtd83vOPQfAlLqny011DI3zONgNqcjlLAZx7TC-QTyhI1qI151Ismr8hKG6grRb5CnKX0qJXqvpL34cEyUMH5eZXTFxueTnP-ahDp8J97Kua5IUR9BA3WQesVNDvMZfXJLuj5nX-1HE7_yWNaUfLybTBn08mh_zAP6D2sbnqnyTTmtr7mTBxljJJtjCKG_lxnxExT4t3qdwkkT5glfuBDX3aOFqtyOS2XqJqM1a5bru9xgAEz_zySisk"/>
+                                    </div>
+                                </div>
+                           
+                            
+                                <h2 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-4">Our Mission</h2>
+                                <p class="max-w-3xl mx-auto text-stone-700 dark:text-stone-300 leading-relaxed mb-12">
+                                    Our mission is to amplify the voices of those working on the front lines of change, providing a platform for their stories to be heard and shared. We aim to create a space where individuals can learn from diverse perspectives, gain insights into complex issues, and connect with others who share a passion for creating a better future.
+                                </p>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                                        <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H82.5a16,16,0,0,0-10.3,3.75l-.12.11L40,224V64H216Z"></path></svg>
+                                        </div>
+                                        <h3 class="text-xl font-bold mb-2 text-stone-900 dark:text-stone-100">Storytelling</h3>
+                                        <p class="text-stone-600 dark:text-stone-400">We believe in the power of narratives to inspire action and drive change.</p>
+                                    </div>
+                                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                                        <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.62,87.62,0,0,1-6.4,32.94l-44.7-27.49a15.92,15.92,0,0,0-6.24-2.23l-22.82-3.08a16.11,16.11,0,0,0-16,7.86h-8.72l-3.8-7.86a15.91,15.91,0,0,0-11-8.67l-8-1.73L96.14,104h16.71a16.06,16.06,0,0,0,7.73-2l12.25-6.76a16.62,16.62,0,0,0,3-2.14l26.91-24.34A15.93,15.93,0,0,0,166,49.1l-.36-.65A88.11,88.11,0,0,1,216,128ZM143.31,41.34L152,56.9,125.09,81.24,112.85,88H96.14a16,16,0,0,0-13.88,8l-8.73,15.23L63.38,84.19,74.32,58.32a87.87,87.87,0,0,1,69-17ZM40,128a87.53,87.53,0,0,1,8.54-37.80l11.34,30.27a16,16,0,0,0,11.62,10l21.43,4.61L96.74,143a16.09,16.09,0,0,0,14.4,9h1.48l-7.23,16.23a16,16,0,0,0,2.86,17.37l.14.14L128,205.94l-1.94,10A88.11,88.11,0,0,1,40,128Zm102.58,86.78,1.13-5.81a16.09,16.09,0,0,0-4-13.90,1.85,1.85,0,0,1-.14-.14L120,174.74,133.7,144l22.82,3.08,45.72,28.12A88.18,88.18,0,0,1,142.58,214.78Z"></path></svg>
+                                        </div>
+                                        <h3 class="text-xl font-bold mb-2 text-stone-900 dark:text-stone-100">Global Impact</h3>
+                                        <p class="text-stone-600 dark:text-stone-400">Our platform connects changemakers from around the world.</p>
+                                    </div>
+                                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                                        <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path></svg>
+                                        </div>
+                                        <h3 class="text-xl font-bold mb-2 text-stone-900 dark:text-stone-100">Data-Driven Insights</h3>
+                                        <p class="text-stone-600 dark:text-stone-400">We provide insights to help changemakers understand their impact.</p>
+                                    </div>
+                                </div>
+                           
+                          
+                                <div class="grid md:grid-cols-2 gap-12 items-center">
+                                    <div class="rounded-xl overflow-hidden shadow-lg md:order-last">
+                                        <img alt="Co-creation session" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkO6_euwnXYjoknnnQSdUF8hIK3X23Wf_gYT_0zgoMaEVgI5ZJ_oQDivOx1AFPiS1XQaa9H3p0R8t78RMYj7YFKyFyWYJ52NHskbCJlHW9mwgiSbGVgfD20MD11PMTCNQKcjpq50UZ-a4dRQ2heSQwtaBKAsNEzkGo_8yJyovCr1Xp2H7mLLx8rUu2X3oQei1JsB23Cmwy-3F-oCtoaIkmK2w7OJpre_2O0Eq4YXLQ_sl_WeBn0Xh6W5UYDG5eFxTaxb9h2XAUIp4"/>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-3xl font-bold text-stone-900 dark:text-stone-100 mb-4">Our Promise</h2>
+                                        <p class="text-stone-700 dark:text-stone-300 leading-relaxed">
+                                            We promise to provide a platform that is both inspiring and informative, connecting changemakers with the resources and community they need to succeed. We are committed to fostering a culture of collaboration, learning, and impact, where every voice is valued and every story has the potential to make a difference.
+                                        </p>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section id="community" class="py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white">Let’s Create Change, Together</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-zinc-600 dark:text-zinc-400">Join our movement of storytellers, learners, and changemakers dedicated to making a positive impact on the world.</p>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="bg-background-light dark:bg-zinc-900/50 p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                            <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                <svg class="text-primary" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2a10 10 0 0 0-10 10c0 5 3.8 8.2 6.5 9.3a2 2 0 0 0 2.2-1.2c.2-.5.3-1.1.4-1.6.1-.4 0-1 .4-1.4.3-.3.8-.4 1.2-.4h.1c.4 0 1 .1 1.4.4.4.4.4 1 .4 1.4.1.5.2 1.1.4 1.6.3.7.9 1.4 2.2 1.2C18.2 20.2 22 17 22 12A10 10 0 0 0 12 2Z"></path>
+                                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3">Listen & Subscribe</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 mb-6 flex-grow">Stay up-to-date with the latest stories and insights from changemakers around the world. Subscribe to our newsletter.</p>
+                            <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors w-full" href="#">
+                                Subscribe
+                            </a>
+                        </div>
+                        <div class="bg-background-light dark:bg-zinc-900/50 p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                            <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                <svg class="text-primary" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m12 3-1.41 1.41L16.17 10H4v4h12.17l-5.58 5.59L12 21l8-8-8-8z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3">Learn With Us</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 mb-6 flex-grow">Join our Academy to gain access to in-depth courses, workshops, and resources designed to empower you on your journey.</p>
+                            <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors w-full" href="#academy" onclick="showSection('academy')">
+                                Join the Academy
+                            </a>
+                        </div>
+                        <div class="bg-background-light dark:bg-zinc-900/50 p-8 rounded-xl border border-primary/20 flex flex-col items-center text-center">
+                            <div class="bg-primary/20 p-4 rounded-full mb-6">
+                                <svg class="text-primary" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"></path>
+                                    <path d="M18 9h2a2 2 0 0 1 2 2v10l-4-4h-6a2 2 0 0 1-2-2v-1"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-3">Share Your Story</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 mb-6 flex-grow">Have a story of impact to share? Partner with us to amplify your voice and reach a wider audience of changemakers.</p>
+                            <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors w-full" href="#">
+                                Partner With Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stories Section -->
+            <section id="stories" class="py-16 md:py-24 section-hidden">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <h1 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-4">
+                            Stories in <span class="text-primary">Motion</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                            Dive into the heart of change with our mini-documentaries. Each film spotlights the journeys of changemakers, revealing their challenges, breakthroughs, and the impact they're creating.
+                        </p>
+                        <a class="inline-flex items-center justify-center px-8 py-3 text-base font-bold bg-primary text-background-dark rounded-full hover:opacity-90 transition-opacity shadow-lg" href="#">
+                            Watch and share stories that spark action
+                        </a>
+                    </div>
+                </div>
+                <div class="container mx-auto px-6 mt-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="group bg-white dark:bg-gray-900/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="relative">
+                                <img alt="Film still for The Ripple Effect" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT_--94tySU1ddkqOdoxgTt0Ricc9fXHRHdaJrn1Dk0DAOOt-fKrIQxzJtSfY56iJwg-EZmAFhhQ4emE5nudQL_fhoHsp61D0aKZiLiKswHeWlo7DRyULuPkwngQkvrj2wL4J_e6ZZYWNRzaffrQQlDWx4dH2f5YokR6eoMrmp8L30tPqyO0t4cl7jXHVD1Kvq84lKvmXNi5f1iujMtSMqw2G8rTVFP97Kmh-3AbWKCW8OAhJ0MSjg-90HeTnBt91ugz69SQqJoYM"/>
+                                <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">The Ripple Effect</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">A community unites to restore a polluted river, transforming it into a thriving ecosystem.</p>
+                            </div>
+                        </div>
+                        <div class="group bg-white dark:bg-gray-900/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="relative">
+                                <img alt="Film still for Seeds of Change" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgz-ZFAn8ErWcR8hbR2TwtDy4KSHcPufBD-IO0Mkq3EuBmBagfTmR1EHc5PozuegFKcWAL6kqODTzCoqcw1ydvU9IyF37XU5q4PNE4YBAPu8M2q_xbITfuCTddQabM4LZl9LcJks2zBfR603tfVfsnrBPOfXj544t4u1YCeS48v8GNWRNQHZ4tnxkXFX288hwao6YIFWh5zDWanK9lBIsRRWR6RNsab6K1OmTbEH7daWJEdwu4R-1AVj-nsL9GAlb6WAwFC4hkr40"/>
+                                <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Seeds of Change</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">A young farmer introduces sustainable practices, revitalizing her family's land and inspiring others.</p>
+                            </div>
+                        </div>
+                        <div class="group bg-white dark:bg-gray-900/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="relative">
+                                <img alt="Film still for Voices of Tomorrow" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYGGCInGNp_IB8vr7KyVDv7mrNNikjzqtGee_eRvHoVC0LRkqyNZtJSeV7IZEv3lBixFacHQRQs3tJ7qoEkgsC9BT3P-OgZLaLrDnkqyP4XxEMsPGupgSC1R3EbfqCKWGq5FOvw850H5t4rZIXlt2UvXyFDymfWWO84rKi3B1kjHdqbg0zEzRjidozvjRClhi4qx1PiBdRv1YTxuhQ3KzAml1oDuACi_F1tV_vNFLyq0bgiLsuaidj0WamYqJUIekEwImeZ2qDEH8"/>
+                                <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Voices of Tomorrow</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">A group of students uses art to amplify marginalized voices, fostering dialogue and understanding.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-16 text-center">
+                        <button class="px-8 py-3 text-base font-bold bg-primary/20 dark:bg-primary/30 text-gray-900 dark:text-white rounded-full hover:bg-primary/40 dark:hover:bg-primary/50 transition-colors">
+                            Explore the Collection
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Podcast Section -->
+            <section id="podcast" class="py-16 sm:py-24 section-hidden">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter">Conversations That Matter</h2>
+                            <p class="text-lg text-black/70 dark:text-white/70">
+                                Dive into the journeys of changemakers who are reshaping our world. Each episode explores the pivotal moments, challenges, and triumphs that have defined their paths, offering insights and inspiration for those striving to make a difference.
+                            </p>
+                            <div class="flex items-center gap-4 pt-4">
+                                <a class="inline-block bg-primary text-background-dark font-bold text-sm px-8 py-3 rounded-full hover:bg-primary/80 transition-colors" href="#">Listen on Spotify</a>
+                                <a class="inline-block bg-primary/20 dark:bg-primary/30 text-black dark:text-white font-bold text-sm px-8 py-3 rounded-full hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors" href="#">
+                                    View Episodes
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4 h-96">
+                            <div class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg">
+                                <img alt="Podcast cover art" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswYUabaW2qy4wuF0wbsh1yLV6Qos0J13_4byrf8Y671yvsG-BUXymXpJ0OIp1oKQ09l9MOnq7N1YDN6i1kkqmToT2v4LOkxOLSWbGjFvzFNyRbJrLZC6LWbOlDbBcbyRvzQRQffk14csv2MNbO5qYqW3g7Y6x2VaZarV-23t3CVSNCioy4SVmjZm3vcHCNQpHc__rsTKOuJF0BWvOlX9I-AyBlrVGBNGucyIWpAAl33W0r9_PSmHyLXlR9-7r6_2JuHd_1Kn8MA4"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl md:text-4xl font-bold">Latest Episodes</h3>
+                        <p class="text-lg text-black/70 dark:text-white/70 mt-2">Catch up on our most recent conversations.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-background-light dark:bg-background-dark rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <img alt="Episode 1 Cover" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOZrI3CnkutBLpx6gJ1_DAS5xFtDa7So71nqkxBFGyGqPKaRssBiU1ibqFN-vYWckgYpliKCNRwx7LzUABFci6tFjARj56-o8KPmQ6CYypwFkuBVn-P6AZWCAyLxrr7Nrh7nxuO60j398urbAWDEvvlhf_1o9D2_8om9IzmDBq1BsXVkxT0LiUq9YlkwFq267fLycYbENN29gZw7Q_njWwPxIHD_jM2irHbJ7vLqMqDAKtSPo4Owgvyegrgh1aMCHQyrfqFuL0lk"/>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg">Episode 1: The Power of Community</h4>
+                                <p class="text-sm text-black/60 dark:text-white/60 mt-1">Explore how community support fuels change.</p>
+                                <a class="text-primary font-semibold text-sm mt-4 inline-flex items-center gap-2 group" href="#">
+                                    Play Episode
+                                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <img alt="Episode 2 Cover" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVnT0DoxfljTb65iLqeAtCt2uKmULWQYwvCHfJHVw3iwboQFwxBvhtl0l6X6QFHz0P0Rp1o_GHV0hrghryOXUS4iE3q0O2oFMyywYvgD7KYRbtuF6NFTn4HCMQIrhDP2tjOpetBABwcJLnbd7DZ0Ti2e1x5wWPB_JOoAC_WW0MqFJRtAIYspv3dscfm2nVxBv4kkyExhhPVclEvhjNukhpQOUQVXJM8mF99ACKfgqGbgTq1OZFcr62oXuY-XfZ3gQIG9VOa7lHHt4"/>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg">Episode 2: Navigating Change</h4>
+                                <p class="text-sm text-black/60 dark:text-white/60 mt-1">Learn to navigate the complexities of change.</p>
+                                <a class="text-primary font-semibold text-sm mt-4 inline-flex items-center gap-2 group" href="#">
+                                    Play Episode
+                                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <img alt="Episode 3 Cover" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKjDG_rntOH66yQM1g-kwIlb9gdI6eXajKi3OJPKDHr5GrSpAXADkppn0UxZPcJxEwrwyeYYla_akdTwD2Y2qjW8UNaqJaZQkq5RMgufOujTVI9cgrUOC1LS2ffEpoQklxYB2hr7JfDc4DtqyelYCK-P_YwXyalTttWGBBuzue7hJ7apeud7d2M846tASbiTnN5HVT0nQd-N2mz_FxNRlGSAXc4gc8ZJm5SaHb5xiw17sQhGtE64jG8yFuB0jf0kBjWVgEN271VSA"/>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg">Episode 3: Building Resilience</h4>
+                                <p class="text-sm text-black/60 dark:text-white/60 mt-1">Discover strategies for building resilience.</p>
+                                <a class="text-primary font-semibold text-sm mt-4 inline-flex items-center gap-2 group" href="#">
+                                    Play Episode
+                                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl md:text-4xl font-bold">Listen & Share the Impact</h3>
+                        <p class="text-lg text-black/70 dark:text-white/70 mt-2">Find us on your favorite platforms.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                        <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl shadow-md border border-black/5 dark:border-white/5">
+                            <div class="bg-primary/20 text-primary w-16 h-16 rounded-full inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-4xl">headphones</span>
+                            </div>
+                            <h4 class="font-bold text-xl mt-6">Spotify</h4>
+                            <p class="text-sm text-black/60 dark:text-white/60 mt-1">Follow us for new episodes every week.</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl shadow-md border border-black/5 dark:border-white/5">
+                            <div class="bg-primary/20 text-primary w-16 h-16 rounded-full inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-4xl">mic</span>
+                            </div>
+                            <h4 class="font-bold text-xl mt-6">YouTube</h4>
+                            <p class="text-sm text-black/60 dark:text-white/60 mt-1">Watch video versions of our podcasts.</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl shadow-md border border-black/5 dark:border-white/5">
+                            <div class="bg-primary/20 text-primary w-16 h-16 rounded-full inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-4xl">podcasts</span>
+                            </div>
+                            <h4 class="font-bold text-xl mt-6">Apple Podcasts</h4>
+                            <p class="text-sm text-black/60 dark:text-white/60 mt-1">Listen on the go on your Apple devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academy Section -->
+            <section id="academy" class="py-16 md:py-24 section-hidden">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900 dark:text-white">For Changemakers, By Changemakers</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+                        The Beneath the Impact Academy is a vibrant learning community designed to empower changemakers like you. We offer a unique blend of storytelling, skill-building, and community engagement to help you amplify your impact and drive meaningful change.
+                    </p>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <h3 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">What You’ll Find</h3>
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">groups</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Learning Circles</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Collaborative learning experiences focused on specific themes.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">science</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Labs</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Hands-on workshops to develop practical skills.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">play_circle</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Self-Paced Content</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Flexible, on-demand courses to learn at your own pace.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">record_voice_over</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Coaching</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Personalized guidance from experienced mentors.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">diversity_3</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Community</h4>
+                            <p class="text-gray-600 dark:text-gray-300">A supportive network of fellow changemakers.</p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-4xl">mic</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Masterclasses</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Expert-led sessions on cutting-edge topics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <div class="grid items-center gap-12 lg:grid-cols-2">
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Our Learning Structure</h3>
+                            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                                Our Academy is structured around a cohort-based model, providing a rich and immersive learning experience. Each cohort progresses through a series of interconnected modules, fostering a sense of community and shared growth. You'll engage in collaborative projects, receive personalized feedback, and build lasting relationships with fellow changemakers.
+                            </p>
+                        </div>
+                        <div class="w-full h-80 rounded-xl overflow-hidden shadow-lg">
+                            <div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa-M0G0qTNL01AqHNw16T5UJ9X1nxjJaRiyzYzb7LRpikebb1-xszlUrbiuk2OWNJktCiEXqzE9cQsBojVK0ufS522HmiMwWPwfwtnkFItcYPTfZuB5hWoDO4gZPdENFVucujCIcQGNVKkGWxUSyO9Afei0yyNdn4Sw-slsq5_i5k49SDsSamE5YfpJ_rxYEdrtZHFVNlM6FBXz39tfef6m8a1R_MJhqFdJ6gY5Kt5LAHUR4MvX0mh4MdFEFyryT90js5j9WmsqGk");'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <div class="grid items-center gap-12 lg:grid-cols-2">
+                        <div class="order-2 lg:order-1">
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Fellowships</h3>
+                            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                                Our fellowships offer intensive, immersive experiences for changemakers seeking to deepen their impact. Fellows receive mentorship, access to exclusive resources, and opportunities to collaborate on real-world projects. Stay tuned for upcoming fellowship opportunities.
+                            </p>
+                        </div>
+                        <div class="w-full h-80 rounded-xl overflow-hidden shadow-lg order-1 lg:order-2">
+                            <div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbWGu6Req8bw1nqgSBwy9hu5N5gH5z8ul0m5e3_OGa6eEYt89Pghy74jDBbT6t8PqE2rNzGGwAxctBDQ9dXhIbM2caiFHnwHwQ6CjgBUY3Nlmyt_6D7s-a5daprsVQnlfUtPHV21T4eyPKNgkGu8HZ1Vg-RHY7p53lXbBST1wSEoqXX1Yd4vOUocq1L8XYTPlnJwYJvLC-yArVe8h-xu2rqz7EQpSZxTgqgOEDD8DvWwdRFyNuW9eI6PG-OuUd8s9xOqyRyz60Jco");'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                    <h3 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Testimonials</h3>
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <div class="flex items-center gap-4">
+                                <div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCX_0NbNN7iw_7OQDX61O0PYWcuVn32eFC84O21TptMVquU5bmf1xT3mGvMen3yEPiBWr5vKuNo4wv7CAqUKL776sZaf5ZhSeiBMgQuHJURZ9Ct7JcVxGxEsbBGQtA1fc1Y01Us0Da2TBGlieU4rmSUVNldY2PtiMgCCgFHpnO-zdgi1Chl-6cHMFq1d_cbyq9GKQvX1jMqyX8lnXnlcI_lmplofQWzEdQnH5h6QQHR6Ge4LKdhUpaed2PG17oLUGOwSsuouE1k9U8");'></div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Sophia Carter</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">2023-08-15</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                "The Academy has been transformative for my work. The learning circles provided a supportive environment to explore new ideas, and the coaching sessions helped me refine my approach to social impact. I've gained valuable skills and a network of incredible peers."
+                            </p>
+                            <div class="flex gap-4 text-gray-500 dark:text-gray-400">
+                                <button class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined">thumb_up</span> 12</button>
+                                <button class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined">thumb_down</span> 2</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                            <div class="flex items-center gap-4">
+                                <div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7p1qQvLaOq9tfTHnJh0m39ccAhb2jVfX-ObweoINwn7WmWHGhoXMUAmMhJDTJEWjZoT7FLtKLIzCd5_t9QC9tDitxNM4ZzAtSFpebaNKwKZY7ewsT718_QlkuHlxovscqhtZFzw1JBzrY9fpMe-pk2HSxy-ffD_C3HutiN2u_HG9R0xHQcyBHc8qr2HLCwl7AQClYq1GuFS7_RIdvZKk82vcMrGd7qPJkax3K-L1fcgrOs8cqRw6StMCtuWvLnAE14OjA_sx1Ssk");'></div>
+                                <div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Ethan Bennett</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">2023-07-20</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-primary">star</span>
+                                <span class="material-symbols-outlined text-gray-400 dark:text-gray-600">star_border</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                "I appreciated the practical focus of the labs and the flexibility of the self-paced content. The community aspect was also a highlight, connecting me with like-minded individuals who are passionate about creating change. I'm excited to apply what I've learned in my projects."
+                            </p>
+                            <div class="flex gap-4 text-gray-500 dark:text-gray-400">
+                                <button class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined">thumb_up</span> 8</button>
+                                <button class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined">thumb_down</span> 1</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Ready to Make an Impact?</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">Join a community of changemakers and start your journey with the Beneath the Impact Academy today.</p>
+                    <div class="mt-8">
+                        <button class="bg-primary hover:bg-primary/90 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-colors">Join the Academy</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+       
+        <!-- Footer -->
+        <footer class="bg-background-light dark:bg-background-dark border-t border-primary/20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Beneath the Impact</h3>
+                <p class="text-sm text-gray-400 dark:text-gray-400">Storytelling and learning for changemakers.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a class="text-gray-400 hover:text-primary" href="#home">Home</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#stories">Stories</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#podcast">Podcast</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#academy">Academy</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#community">Community</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#about">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a class="text-gray-400 hover:text-primary" href="#">Contact Us</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#">Submit a Story</a></li>
+                    <li><a class="text-gray-400 hover:text-primary" href="#">Partnerships</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Newsletter</h4>
+                <p class="text-sm text-gray-400 mb-4">Get inspired with stories of change delivered to your inbox.</p>
+                <form class="flex">
+                    <input class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-full focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your email" type="email"/>
+                    <button class="px-4 py-2 bg-primary text-background-dark font-bold rounded-r-full hover:opacity-90 transition-opacity" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 Beneath the Impact. All Rights Reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.615 3.184a2.614 2.614 0 00-2.614-2.614H2.614A2.614 2.614 0 000 3.184v18.632a2.614 2.614 0 002.614 2.614h7.632v-9.25H7.5v-3.616h2.747V8.616c0-2.732 1.672-4.22 4.114-4.22 1.17 0 2.174.088 2.467.127v2.86h-1.694c-1.326 0-1.583.63-1.583 1.554v2.038h3.166l-.412 3.616h-2.754v9.25h5.414a2.614 2.614 0 002.614-2.614V3.184z"/>
+                    </svg>
+                </a>
+                <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.542.07-2.977.377-4.104 1.504S.512 3.67.442 5.212c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.07 1.542.377 2.977 1.504 4.104s2.562 1.434 4.104 1.504c1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.542-.07 2.977-.377 4.104-1.504s1.434-2.562 1.504-4.104c.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.07-1.542-.377-2.977-1.504-4.104s-2.562-1.434-4.104-1.504c-1.28-.058-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const sections = document.querySelectorAll('main section');
+
+    // Function to show the selected section and hide others
+    function showSection(sectionId) {
+        // Hide all sections first
+        sections.forEach(section => {
+            section.classList.add('section-hidden');
+        });
+
+        // Show the selected section only (single section view)
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.remove('section-hidden');
+        }
+
+        // Scroll to the top of the section smoothly
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Function to show multiple sections together (for home view)
+    function showHomeView() {
+        // Hide all sections first
+        sections.forEach(section => {
+            section.classList.add('section-hidden');
+        });
+
+        // Show the sections that should be visible on the home page
+        const homeSections = ['home', 'what-we-offer', 'about', 'community'];
+        homeSections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.remove('section-hidden');
+            }
+        });
+
+        // Scroll to the top of the home section
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Enhanced hover effects for cards
+    function initializeCardHoverEffects() {
+        // What We Offer cards
+        const offerCards = document.querySelectorAll('#what-we-offer .flex.flex-col');
+        offerCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+                card.style.boxShadow = '0 20px 40px rgba(0, 100, 100, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Story cards
+        const storyCards = document.querySelectorAll('#stories .group');
+        storyCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-1px)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Podcast episode cards
+        const podcastCards = document.querySelectorAll('#podcast .bg-background-light');
+        podcastCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px) scale(1.03)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 100, 100, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Academy feature cards
+        const academyCards = document.querySelectorAll('#academy .flex.flex-col');
+        academyCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-6px) scale(1.02)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 100, 100, 0.15)';
+                card.querySelector('.material-symbols-outlined').style.transform = 'scale(1.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                card.style.boxShadow = '';
+                card.querySelector('.material-symbols-outlined').style.transform = 'scale(1)';
+            });
+        });
+
+        // Community cards
+        const communityCards = document.querySelectorAll('#community .bg-background-light');
+        communityCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.03)';
+                card.style.boxShadow = '0 20px 40px rgba(0, 100, 100, 0.2)';
+                const svg = card.querySelector('svg');
+                if (svg) {
+                    svg.style.transform = 'scale(1.1)';
+                    svg.style.transition = 'transform 0.3s ease';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                card.style.boxShadow = '';
+                const svg = card.querySelector('svg');
+                if (svg) {
+                    svg.style.transform = 'scale(1)';
+                }
+            });
+        });
+    }
+
+    // Parallax effect for hero section
+    function initializeParallax() {
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxSpeed = 0.5;
+                heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+            });
+        }
+    }
+
+    // Smooth scrolling for anchor links
+    function initializeSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#home') {
+                    showHomeView();
+                    return;
+                } else if (targetId !== '#home' && targetId !== '#stories' && 
+                           targetId !== '#podcast' && targetId !== '#academy' && 
+                           targetId !== '#community' && targetId !== '#about') {
+                    showSection(targetId.substring(1));
+                    return;
+                }
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    // Typing effect for main heading
+    function initializeTypingEffect() {
+        const heading = document.querySelector('#home h1');
+        if (heading) {
+            const text = heading.textContent;
+            heading.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    heading.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            // Start typing effect when section is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        typeWriter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(heading);
+        }
+    }
+
+    // Animate numbers/counters
+    function initializeCounters() {
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const increment = target / 100;
+            let current = 0;
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    counter.textContent = Math.ceil(current);
+                    setTimeout(updateCounter, 20);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(counter);
+        });
+    }
+
+    // Image lazy loading with fade-in effect
+    function initializeLazyLoading() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease-in-out';
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.style.opacity = '1';
+                        
+                        // Load high-quality image if data-src is present
+                        if (img.getAttribute('data-src')) {
+                            img.src = img.getAttribute('data-src');
+                            img.removeAttribute('data-src');
+                        }
+                        
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            observer.observe(img);
+        });
+    }
+
+    // Staggered animation for grid items
+    function initializeStaggeredAnimations() {
+        const gridItems = document.querySelectorAll('.grid > *');
+        gridItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(item);
+        });
+    }
+
+    // Handle mobile menu toggle
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Handle navigation link clicks
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href').substring(1);
+            
+            if (sectionId === 'home') {
+                showHomeView();
+            } else {
+                showSection(sectionId);
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+
+    // Initialize all effects
+    initializeCardHoverEffects();
+    initializeParallax();
+    initializeSmoothScrolling();
+    initializeTypingEffect();
+    initializeCounters();
+    initializeLazyLoading();
+    initializeStaggeredAnimations();
+
+    // Show the home view by default when the page loads
+    showHomeView();
+
+    // Add CSS for smooth transitions
+    const style = document.createElement('style');
+    style.textContent = `
+        .flex.flex-col, .group, .bg-background-light {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        }
+        
+        #home {
+            transition: transform 0.1s ease-out;
+        }
+        
+        .material-symbols-outlined {
+            transition: transform 0.3s ease !important;
+        }
+        
+        /* Pulse animation for CTA buttons */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse:hover {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Glow effect for primary buttons */
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(0, 100, 100, 0.5);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Add pulse class to main CTA buttons
+    const ctaButtons = document.querySelectorAll('.rounded-full.bg-primary');
+    ctaButtons.forEach(btn => {
+        btn.classList.add('pulse', 'glow');
+    });
+
+    // Add float animation to some decorative elements
+    const floatElements = document.querySelectorAll('#what-we-offer .flex.h-12.w-12');
+    floatElements.forEach(el => {
+        el.classList.add('float');
+    });
+});
+</script>
+
+
