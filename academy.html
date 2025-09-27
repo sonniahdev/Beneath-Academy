@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneath the Impact Academy - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#006464',
+                        'background-light': '#f6f8f7',
+                        'background-dark': '#122017',
+                    },
+                    fontFamily: {
+                        display: ['Work Sans'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '0.25rem',
+                        lg: '0.5rem',
+                        xl: '0.75rem',
+                        full: '9999px',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-on-primary {
+            color: #122017;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .pulse:hover {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(0, 100, 100, 0.5);
+        }
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <header class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-primary/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">Beneath the Impact Academy</h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#home">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#academy">Academy</a>
+                </nav>
+                <button class="md:hidden text-gray-900 dark:text-white" id="mobile-menu-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-20 right-0 w-3/4 h-full bg-background-light dark:bg-background-dark border-l border-primary/20 p-6">
+                <nav class="flex flex-col gap-4">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#home">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#academy">Academy</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 dark:text-white mb-6">
+                Yeeba Impact Introduces—<br>Beneath The Impact Academy
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+                Are you ready to become the kind of leader whose story inspires action, whose clarity builds trust, and whose impact speaks for itself? The Beneath The Impact Academy Boot Camp is here just for you.
+            </p>
+            <div class="mt-8">
+                <a href="#apply" class="inline-flex items-center justify-center px-8 py-3 text-base font-bold bg-primary text-background-dark rounded-full hover:bg-primary/90 transition-colors pulse glow">Apply Now—Claim Your Spot</a>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Why This Boot Camp is Different</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm float">
+                    <span class="material-symbols-outlined text-primary text-4xl">build</span>
+                    <p class="text-gray-600 dark:text-gray-300">Equips you with practical tools in impact measurement, strategy, and storytelling.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm float">
+                    <span class="material-symbols-outlined text-primary text-4xl">groups</span>
+                    <p class="text-gray-600 dark:text-gray-300">Fosters peer-to-peer learning so you grow alongside other changemakers.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm float">
+                    <span class="material-symbols-outlined text-primary text-4xl">check_circle</span>
+                    <p class="text-gray-600 dark:text-gray-300">Provides tested frameworks you can immediately apply to your work.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm float">
+                    <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+                    <p class="text-gray-600 dark:text-gray-300">Builds future-ready mindsets, preparing you to thrive in uncertain environments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 bg-primary/10 py-12 rounded-xl">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">A Rare Opportunity</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 text-center">
+                The Academy remains close-knit with just <span class="font-bold text-primary">10 available seats</span>. This means personalized coaching, real peer-to-peer connection, and more “hot seat” chances. Once these 10 slots are filled, registration will close until the next cohort.
+            </p>
+            <div class="mt-8 text-center">
+                <a href="#apply" class="inline-flex items-center justify-center px-8 py-3 text-base font-bold bg-primary text-background-dark rounded-full hover:bg-primary/90 transition-colors pulse glow">Reserve Your Seat</a>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">What to Expect in the Boot Camp</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                    <span class="material-symbols-outlined text-primary text-4xl">play_circle</span>
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">Watch</h4>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Introduction to Beneath The Impact Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Explore expert-led video content to gain insights into impact measurement and storytelling.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                    <span class="material-symbols-outlined text-primary text-4xl">science</span>
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">Learn in Labs</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Join hands-on workshops where you’ll apply frameworks, test strategies, and receive live coaching.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-background-light dark:bg-background-dark shadow-sm">
+                    <span class="material-symbols-outlined text-primary text-4xl">groups</span>
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">Grow in Circles</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Connect with a peer community through Learning Circles, where shared challenges spark collective growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Two Tracks. One Mission: Your Impact.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Lite Track</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to video content</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to reading material</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to the overall community</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gray-400">close</span> No access to labs & workshops</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gray-400">close</span> No coaching support</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gray-400">close</span> No learning circles (core community)</li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 dark:text-gray-300"><strong>Learning style:</strong> Self-paced, flexible</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300"><strong>Best fit for leaders:</strong> Those needing a quick overview of frameworks, narratives, and impact concepts to strengthen decks or pitches.</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300"><strong>Best fit for practitioners:</strong> Those who want access to theory and frameworks but don’t need guided application.</p>
+                    <p class="mt-4 text-gray-900 dark:text-white font-bold">Pricing: [Insert price]</p>
+                    <a href="#apply" class="mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors w-full pulse glow">Choose Lite Track</a>
+                </div>
+                <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Fellowship Track</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to video content</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to reading material</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Access to the overall community</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Includes labs & workshops</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Includes coaching support</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Includes learning circles (core community)</li>
+                    </ul>
+                    <p class="mt-4 text-gray-600 dark:text-gray-300"><strong>Learning style:</strong> Interactive, structured, guided</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300"><strong>Best fit for leaders:</strong> Those seeking hands-on practice and direct coaching to refine value proposition, storytelling, and impact strategies.</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300"><strong>Best fit for practitioners:</strong> Those who want applied methods, workshops, and peer circles to test and validate impact approaches.</p>
+                    <p class="mt-4 text-gray-900 dark:text-white font-bold">Pricing: [Insert price]</p>
+                    <a href="#apply" class="mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors w-full pulse glow">Choose Fellowship Track</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">A Glimpse Into Modules You’ll Learn</h2>
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 1: Introduction to the Measurement Journey</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Get a big-picture view of how measurement connects to strategy, storytelling, and influence.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 2: What is Data?</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Learn how to define, prepare, and collect meaningful data that sets the foundation for impact.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 3: Estimating Impact for Design</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Discover how to anticipate and estimate your intended impact during the design phase of your project or initiative.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 4: Planning for Impact – Impact Prognosis</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Develop a roadmap to align your goals, strategies, and expected outcomes for long-term impact.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 5: Monitoring for Learning and Alignment</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Use monitoring not just as reporting, but as a tool for continuous learning and staying aligned with your vision.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 6: Evaluating for Value and Influence</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Go beyond numbers—learn how to evaluate impact in ways that reveal value, build credibility, and influence stakeholders.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">arrow_right_alt</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white">Module 7: Sharing Insights & Storytelling</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Turn measurement into a story. Use insights to communicate with clarity and inspire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 bg-primary/10 py-12 rounded-xl">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">Why Join Now?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">Gain practical skills in impact measurement, storytelling, and strategy.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">Build confidence to apply these tools in your organization immediately.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">Strengthen your peer network, creating collaborations that last beyond the Academy.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">Foster a culture of learning, shifting from “data for compliance” to “data for decisions.”</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">Co-create knowledge through toolkits, playbooks, and peer stories that grow with each cohort.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-gray-600 dark:text-gray-300">And remember: this is not a mass course. It’s a boutique boot camp with only 10 seats.</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="#apply" class="inline-flex items-center justify-center px-8 py-3 text-base font-bold bg-primary text-background-dark rounded-full hover:bg-primary/90 transition-colors pulse glow">Take Your Seat at the Table</a>
+            </div>
+        </section>
+
+        <section id="apply" class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Apply Now—Claim 1 of the 10 Exclusive Spots</h2>
+            <div class="max-w-lg mx-auto">
+                <div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/20 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Start Your Journey</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Complete the form below to secure your spot in the Beneath The Impact Academy Boot Camp. All fields are required.</p>
+                    <form action="https://formsubmit.co/soniahnjogu435@gmail.com" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="New Application for Beneath The Impact Academy">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Full Name" type="text" name="name" required>
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email" name="email" required>
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Organization (if applicable)" type="text" name="organization">
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Job Title or Role" type="text" name="job_title" required>
+                        <select class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" name="track" required>
+                            <option value="">Select Track</option>
+                            <option value="lite">Lite Track</option>
+                            <option value="fellowship">Fellowship Track</option>
+                        </select>
+                        <textarea class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Why are you interested in joining the Beneath The Impact Academy?" name="motivation" rows="4" required></textarea>
+                        <textarea class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="What specific goals do you hope to achieve through this boot camp?" name="goals" rows="4" required></textarea>
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Years of Experience in Impact-Driven Work" type="number" name="experience" min="0" required>
+                        <select class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" name="sector" required>
+                            <option value="">Select Your Sector</option>
+                            <option value="nonprofit">Nonprofit</option>
+                            <option value="social_enterprise">Social Enterprise</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="government">Government</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="If Other, please specify" type="text" name="sector_other">
+                        <button type="submit" class="w-full px-6 py-3 text-sm font-bold bg-primary text-background-dark rounded-lg hover:bg-primary/90 transition-colors pulse glow">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-background-light dark:bg-background-dark border-t border-primary/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Beneath the Impact</h3>
+                    <p class="text-sm text-gray-400 dark:text-gray-400">Storytelling and learning for changemakers.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a class="text-gray-400 hover:text-primary" href="index.html#home">Home</a></li>
+                        <li><a class="text-gray-400 hover:text-primary" href="index.html#academy">Academy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a class="text-gray-400 hover:text-primary" href="#">Contact Us</a></li>
+                        <li><a class="text-gray-400 hover:text-primary" href="#">Submit a Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-900 dark:text-white">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-4">Get inspired with stories of change delivered to your inbox.</p>
+                    <div class="flex">
+                        <input class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-full focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your email" type="email">
+                        <button class="px-4 py-2 bg-primary text-background-dark font-bold rounded-r-full hover:opacity-90 transition-opacity" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 Beneath the Impact. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.615 3.184a2.614 2.614 0 00-2.614-2.614H2.614A2.614 2.614 0 000 3.184v18.632a2.614 2.614 0 002.614 2.614h7.632v-9.25H7.5v-3.616h2.747V8.616c0-2.732 1.672-4.22 4.114-4.22 1.17 0 2.174.088 2.467.127v2.86h-1.694c-1.326 0-1.583.63-1.583 1.554v2.038h3.166l-.412 3.616h-2.754v9.25h5.414a2.614 2.614 0 002.614-2.614V3.184z"/>
+                        </svg>
+                    </a>
+                    <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.542.07-2.977.377-4.104 1.504S.512 3.67.442 5.212c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.07 1.542.377 2.977 1.504 4.104s2.562 1.434 4.104 1.504c1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.542-.07 2.977-.377 4.104-1.504s1.434-2.562 1.504-4.104c.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.07-1.542-.377-2.977-1.504-4.104s-2.562-1.434-4.104-1.504c-1.28-.058-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            const cards = document.querySelectorAll('.flex.flex-col, .bg-background-light');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-6px) scale(1.02)';
+                    card.style.boxShadow = '0 15px 30px rgba(0, 100, 100, 0.15)';
+                    const icon = card.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.transform = 'scale(1.2)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.boxShadow = '';
+                    const icon = card.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.transform = 'scale(1)';
+                });
+            });
+
+            const moduleItems = document.querySelectorAll('.flex.items-start');
+            moduleItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(item);
+            });
+        });
+    </script>
