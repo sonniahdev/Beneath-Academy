@@ -2237,10 +2237,10 @@
                                 <span class="text-gray-700 dark:text-gray-300">Use insights to refine your work and share evidence with stakeholders</span>
                             </li>
                         </ul>
-                        <button onclick="scrollToModules()" class="group inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <!-- <button onclick="scrollToModules()" class="group inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             Discover How It Works
                             <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
+                        </button> -->
                     </div>
                     <div class="relative">
     <!-- Before/After Split Image -->
@@ -2269,19 +2269,106 @@
         </div>
     </div>
 
-    <!-- Modules Overview Section -->
    <!-- Modules Overview Section -->
 <div id="modules-overview" class="bg-gray-50 dark:bg-gray-800/50 py-16 md:py-24">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-20">
+        <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Modules Overview</h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Rooted in approaches like model thinking, human-centered design, and systems thinking, this fellowship guides you through a practical pathway to establish learning systems and cultures.
             </p>
         </div>
 
-        <!-- Compass Layout -->
-        <div class="compass-container relative w-full max-w-7xl mx-auto" style="padding-bottom: 100%;">
+        <!-- Center Module - Visible on all screens -->
+        <div class="max-w-4xl mx-auto mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-3xl">target</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Center: Data and Culture as the Core</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Support a practical mindset in your team: Make data collection feel accessible and useful, not overwhelming. Set up learning processes that connect your goals to everyday decisions, allowing your organization to reflect and adjust as needed, regardless of your starting point.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Grid Layout (visible on small screens) -->
+        <div class="block md:hidden">
+            <div class="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
+                <!-- North Module -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl">explore</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">North: Purpose</h3>
+                            <p class="text-sm text-primary font-medium">A. Understanding the Problem, Why We Measure Impact</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Clarify your mission: Use tools like personas and journey maps to identify community needs, define key issues, and establish a focus that aligns with stakeholders. Document existing efforts into clear narratives that support ongoing work.
+                    </p>
+                </div>
+
+                <!-- East Module -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-600 dark:text-green-400 text-xl">analytics</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">East: Evidence</h3>
+                            <p class="text-sm text-primary font-medium">B. Linking Projects to the Problem, What We Measure & How</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Streamline data processes: Develop theories of change and indicators linked to your activities, integrating data collection with available tools. Address stakeholder priorities to gather evidence that reflects real progress.
+                    </p>
+                </div>
+
+                <!-- South Module -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-xl">trending_up</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">South: Action</h3>
+                            <p class="text-sm text-primary font-medium">C. Embracing Experimentation, Applying Data for Adaptation</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Incorporate experimentation: Try small pilots, review outcomes thoughtfully, and make adjustments based on findings. Address common hesitations to support incremental improvements, tailored for organizations handling detailed reporting.
+                    </p>
+                </div>
+
+                <!-- West Module -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-xl">share</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">West: Learning</h3>
+                            <p class="text-sm text-primary font-medium">D. Sharing Learning for Influence, Sensemaking, Validation & Influence</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Share findings effectively: Conduct sessions to validate with communities, then create materials like infographics or briefs to present data. Monitor responses to refine your approach, helpful for teams contributing to sector discussions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compass Layout (visible on medium+ screens) -->
+        <div class="hidden md:block compass-container relative w-full max-w-7xl mx-auto" style="padding-bottom: 100%;">
             <!-- Compass Background -->
             <div style="position: absolute; inset: 0;">
                 <!-- Compass Points -->
@@ -2383,63 +2470,76 @@
     </div>
 </div>
 
- <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
-        }
-        
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+    }
+    
+    .compass-container {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .compass-circle {
+        position: absolute;
+        border: 3px solid rgba(148, 163, 184, 0.2);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .compass-line {
+        position: absolute;
+        background: linear-gradient(90deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.15));
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transform: translateY(-50%);
+    }
+    
+    .compass-line-vertical {
+        position: absolute;
+        background: linear-gradient(180deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.15));
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        transform: translateX(-50%);
+    }
+    
+    .compass-point {
+        position: absolute;
+        font-size: 20px;
+        font-weight: 700;
+        color: rgba(100, 116, 139, 0.5);
+        letter-spacing: 0.1em;
+    }
+    
+    .module-card {
+        transition: all 0.3s ease;
+    }
+    
+    .module-card:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
         .compass-container {
-            position: relative;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: none;
         }
-        
-        .compass-circle {
-            position: absolute;
-            border: 3px solid rgba(148, 163, 184, 0.2);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+    }
+    
+    @media (min-width: 768px) {
+        .mobile-grid {
+            display: none;
         }
-        
-        .compass-line {
-            position: absolute;
-            background: linear-gradient(90deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.15));
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            transform: translateY(-50%);
-        }
-        
-        .compass-line-vertical {
-            position: absolute;
-            background: linear-gradient(180deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.15));
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            transform: translateX(-50%);
-        }
-        
-        .compass-point {
-            position: absolute;
-            font-size: 20px;
-            font-weight: 700;
-            color: rgba(100, 116, 139, 0.5);
-            letter-spacing: 0.1em;
-        }
-        
-        .module-card {
-            transition: all 0.3s ease;
-        }
-        
-        .module-card:hover {
-            transform: scale(1.02);
-        }
-    </style>
+    }
+</style>
     
 
 <!-- Journey Map Section -->
@@ -2452,7 +2552,8 @@
             </p>
         </div>
 
-        <div class="map-container relative w-full min-h-[1400px] bg-gradient-to-b from-blue-100 via-blue-50 to-green-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-3xl shadow-2xl overflow-visible p-8">
+        <div class="journey-map-container relative w-full min-h-[1400px] bg-gradient-to-b from-blue-100 via-blue-50 to-green-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-3xl shadow-2xl overflow-visible p-8">
+            
             <!-- Decorative clouds -->
             <div class="absolute top-12 left-[10%] text-6xl opacity-15 animate-float pointer-events-none">☁️</div>
             <div class="absolute top-36 right-[15%] text-6xl opacity-15 animate-float-delayed pointer-events-none">☁️</div>
@@ -2472,67 +2573,76 @@
             <!-- End Flag -->
             <div class="absolute bottom-20 left-[33%] text-6xl animate-wave z-10 pointer-events-none">🏁</div>
 
-            <!-- Location Pin 1: INTEREST -->
-            <div class="absolute top-32 left-1/2 transform -translate-x-1/2 flex flex-row-reverse items-center z-30 animate-drop-in group">
-                <div class="relative w-14 h-14 cursor-pointer transition-transform hover:scale-110 ml-4">
+            <!-- Connecting Dots - Completely Static and Visible -->
+            <div class="absolute inset-0 w-full h-full pointer-events-none z-10">
+                <!-- Path from Start to 1 - Fixed with curved path -->
+                <div class="absolute top-[120px] left-1/2 h-[60px] w-0 border-l-4 border-dashed border-purple-600 transform -translate-x-1/2"></div>
+                <div class="absolute top-[180px] left-1/2 h-0 w-[18%] border-t-4 border-dashed border-purple-600 transform -translate-x-full"></div>
+                
+                <!-- Path from 1 to 2 -->
+                <div class="absolute top-[180px] left-[30%] h-[100px] w-0 border-l-4 border-dashed border-purple-600"></div>
+                <div class="absolute top-[280px] left-[30%] h-0 w-[25%] border-t-4 border-dashed border-purple-600"></div>
+                
+                <!-- Path from 2 to 3 -->
+                <div class="absolute top-[330px] left-[55%] h-[200px] w-0 border-l-4 border-dashed border-pink-500"></div>
+                <div class="absolute top-[530px] left-[30%] h-0 w-[25%] border-t-4 border-dashed border-pink-500"></div>
+                
+                <!-- Path from 3 to 4 -->
+                <div class="absolute top-[580px] left-[30%] h-[220px] w-0 border-l-4 border-dashed border-cyan-500"></div>
+                <div class="absolute top-[800px] left-[30%] h-0 w-[25%] border-t-4 border-dashed border-cyan-500"></div>
+                
+                <!-- Path from 4 to 5 -->
+                <div class="absolute top-[850px] left-[55%] h-[220px] w-0 border-l-4 border-dashed border-green-500"></div>
+                
+                <!-- Path from 5 to End -->
+                <div class="absolute top-[1120px] left-[55%] h-[120px] w-0 border-l-4 border-dashed border-yellow-500 transform -translate-x-1/2"></div>
+                <div class="absolute top-[1240px] left-[33%] h-0 w-[22%] border-t-4 border-dashed border-yellow-500"></div>
+            </div>
+
+            <!-- Location Pin 1: INTEREST (MOVED TO LEFT) -->
+            <div class="absolute top-32 left-[30%] flex flex-row items-center z-30">
+                <div class="relative w-14 h-14 mr-4">
                     <div class="absolute w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full rounded-br-none rotate-[-45deg] shadow-xl border-4 border-white"></div>
                     <div class="absolute w-14 h-14 flex items-center justify-center text-2xl font-bold text-white pb-2">1</div>
                 </div>
-                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <!-- Card -->
+                <div class="ml-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl">
                     <h3 class="text-purple-600 dark:text-purple-400 text-sm font-semibold mb-1">Phase 01</h3>
                     <h2 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Interest</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-3">Your journey begins here!</p>
                     <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-purple-600">💡</span>
-                            <span class="text-gray-700 dark:text-gray-300">Express interest in program</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-purple-600">🎯</span>
-                            <span class="text-gray-700 dark:text-gray-300">Initial consultation</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-purple-600">📋</span>
-                            <span class="text-gray-700 dark:text-gray-300">Learn program structure</span>
-                        </li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-purple-600">💡</span><span class="text-gray-700 dark:text-gray-300">Express interest in program</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-purple-600">🎯</span><span class="text-gray-700 dark:text-gray-300">Initial consultation</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-purple-600">📋</span><span class="text-gray-700 dark:text-gray-300">Learn program structure</span></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Location Pin 2: SELECTION -->
-            <div class="absolute top-[280px] left-1/2 transform -translate-x-1/2 flex flex-row-reverse items-center z-30 animate-drop-in-delayed-1 group">
-                <div class="relative w-14 h-14 cursor-pointer transition-transform hover:scale-110 ml-4">
+            <div class="absolute top-[280px] left-[55%] flex flex-row items-center z-30">
+                <div class="relative w-14 h-14 mr-4">
                     <div class="absolute w-14 h-14 bg-gradient-to-br from-pink-500 to-red-500 rounded-full rounded-br-none rotate-[-45deg] shadow-xl border-4 border-white"></div>
                     <div class="absolute w-14 h-14 flex items-center justify-center text-2xl font-bold text-white pb-2">2</div>
                 </div>
-                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <div class="ml-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl">
                     <h3 class="text-pink-600 dark:text-pink-400 text-sm font-semibold mb-1">Phase 02</h3>
                     <h2 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Selection</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-3">Getting enrolled and ready</p>
                     <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-pink-600">✅</span>
-                            <span class="text-gray-700 dark:text-gray-300">Program enrollment</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-pink-600">📊</span>
-                            <span class="text-gray-700 dark:text-gray-300">Skills assessment</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-pink-600">🗺️</span>
-                            <span class="text-gray-700 dark:text-gray-300">Custom path creation</span>
-                        </li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-pink-600">✅</span><span class="text-gray-700 dark:text-gray-300">Program enrollment</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-pink-600">📊</span><span class="text-gray-700 dark:text-gray-300">Skills assessment</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-pink-600">🗺️</span><span class="text-gray-700 dark:text-gray-300">Custom path creation</span></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Location Pin 3: DISCOVERY -->
-            <div class="absolute top-[530px] left-[30%] flex flex-row-reverse items-center z-30 animate-drop-in-delayed-2 group">
-                <div class="relative w-14 h-14 cursor-pointer transition-transform hover:scale-110 ml-4">
+            <div class="absolute top-[530px] left-[30%] flex flex-row-reverse items-center z-30">
+                <div class="relative w-14 h-14 ml-4">
                     <div class="absolute w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full rounded-br-none rotate-[-45deg] shadow-xl border-4 border-white"></div>
                     <div class="absolute w-14 h-14 flex items-center justify-center text-2xl font-bold text-white pb-2">3</div>
                 </div>
-                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[340px] shadow-xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[340px] shadow-xl">
                     <h3 class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold mb-1">Phase 03</h3>
                     <h2 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Discovery</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-3">Coaching sessions & goal setting</p>
@@ -2545,59 +2655,38 @@
             </div>
 
             <!-- Location Pin 4: LEARNING CIRCLE -->
-            <div class="absolute top-[800px] left-[55%] flex flex-row-reverse items-center z-30 animate-drop-in-delayed-3 group">
-                <div class="relative w-14 h-14 cursor-pointer transition-transform hover:scale-110 ml-4">
+            <div class="absolute top-[800px] left-[55%] flex flex-row items-center z-30">
+                <div class="relative w-14 h-14 mr-4">
                     <div class="absolute w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full rounded-br-none rotate-[-45deg] shadow-xl border-4 border-white"></div>
                     <div class="absolute w-14 h-14 flex items-center justify-center text-2xl font-bold text-white pb-2">4</div>
                 </div>
-                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <div class="ml-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl">
                     <h3 class="text-green-600 dark:text-green-400 text-sm font-semibold mb-1">Phase 04</h3>
                     <h2 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Learning Circle</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-3">Continuous data & code development</p>
                     <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-green-600">🎓</span>
-                            <span class="text-gray-700 dark:text-gray-300">Hands-on learning</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-green-600">🤝</span>
-                            <span class="text-gray-700 dark:text-gray-300">Peer collaboration</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-green-600">🔄</span>
-                            <span class="text-gray-700 dark:text-gray-300">Regular feedback</span>
-                        </li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-green-600">🎓</span><span class="text-gray-700 dark:text-gray-300">Hands-on learning</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-green-600">🤝</span><span class="text-gray-700 dark:text-gray-300">Peer collaboration</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-green-600">🔄</span><span class="text-gray-700 dark:text-gray-300">Regular feedback</span></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Location Pin 5: ENTIRE COMMUNITY -->
-            <div class="absolute top-[1070px] left-[35%] flex flex-row-reverse items-start z-30 animate-drop-in-delayed-4 group">
-                <div class="relative w-14 h-14 cursor-pointer transition-transform hover:scale-110 ml-4 flex-shrink-0">
+            <div class="absolute top-[1070px] left-[55%] flex flex-row-reverse items-start z-30">
+                <div class="relative w-14 h-14 ml-4 flex-shrink-0">
                     <div class="absolute w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full rounded-br-none rotate-[-45deg] shadow-xl border-4 border-white"></div>
                     <div class="absolute w-14 h-14 flex items-center justify-center text-2xl font-bold text-white pb-2">5</div>
                 </div>
-                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <div class="mr-4 bg-white dark:bg-gray-800 rounded-2xl p-6 w-[320px] shadow-xl">
                     <h3 class="text-yellow-600 dark:text-yellow-500 text-sm font-semibold mb-1">Phase 05</h3>
                     <h2 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Entire Community</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-3">Celebration & ongoing growth</p>
                     <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-yellow-600">🎉</span>
-                            <span class="text-gray-700 dark:text-gray-300">Circle 2 Training</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-yellow-600">🌟</span>
-                            <span class="text-gray-700 dark:text-gray-300">Achievement sharing</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-yellow-600">🤝</span>
-                            <span class="text-gray-700 dark:text-gray-300">Network events</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-sm">
-                            <span class="text-yellow-600">💪</span>
-                            <span class="text-gray-700 dark:text-gray-300">Ongoing support</span>
-                        </li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-yellow-600">🎉</span><span class="text-gray-700 dark:text-gray-300">Circle 2 Training</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-yellow-600">🌟</span><span class="text-gray-700 dark:text-gray-300">Achievement sharing</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-yellow-600">🤝</span><span class="text-gray-700 dark:text-gray-300">Network events</span></li>
+                        <li class="flex items-start gap-2 text-sm"><span class="text-yellow-600">💪</span><span class="text-gray-700 dark:text-gray-300">Ongoing support</span></li>
                     </ul>
                 </div>
             </div>
@@ -2606,52 +2695,29 @@
 </div>
 
 <style>
-@keyframes float {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(30px) translateY(-10px); }
-}
-
-@keyframes wave {
-    0%, 100% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-}
-
-@keyframes drop-in {
-    0% { transform: translate(-50%, -300px) scale(0); opacity: 0; }
-    100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
-}
-
-.animate-float {
-    animation: float 20s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-    animation: float 20s ease-in-out infinite 5s;
-}
-
-.animate-wave {
-    animation: wave 2s ease-in-out infinite;
-}
-
-.animate-drop-in {
-    animation: drop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s backwards;
-}
-
-.animate-drop-in-delayed-1 {
-    animation: drop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s backwards;
-}
-
-.animate-drop-in-delayed-2 {
-    animation: drop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s backwards;
-}
-
-.animate-drop-in-delayed-3 {
-    animation: drop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s backwards;
-}
-
-.animate-drop-in-delayed-4 {
-    animation: drop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s backwards;
-}
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes float-delayed {
+        0%, 100% { transform: translateY(-5px); }
+        50% { transform: translateY(5px); }
+    }
+    @keyframes wave {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(5deg); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-delayed { animation: float-delayed 8s ease-in-out infinite; }
+    .animate-wave { animation: wave 3s ease-in-out infinite; }
+    
+    .journey-map-container {
+        background: linear-gradient(to bottom, #dbeafe, #eff6ff, #f0fdf4);
+    }
+    
+    .dark .journey-map-container {
+        background: linear-gradient(to bottom, #1f2937, #374151, #1f2937);
+    }
 </style>
 
     <!-- Who It's For Section -->
